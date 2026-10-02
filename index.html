@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Muhammad Taha — WordPress Developer & Front-End Engineer</title>
 <meta name="description" content="Portfolio of Muhammad Taha — WordPress Developer from Karachi. Fast, responsive, pixel-perfect websites."/>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,8 +72,11 @@ body.cursor-on #c-dot,body.cursor-on #c-ring{display:block}
 #navbar{position:fixed;top:0;left:0;right:0;z-index:120;transition:.35s;padding:18px 0}
 #navbar.scrolled{padding:10px 0;background:rgba(247,246,253,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;align-items:center;gap:2rem}
-.logo{font:700 1.35rem var(--head)}
-.logo span{color:var(--accent)}
+.logo{display:inline-flex;align-items:center;gap:.65rem}
+.logo-mark{width:40px;height:40px;flex:none;filter:drop-shadow(0 8px 14px rgba(109,40,217,.35))}
+.logo .logo-txt{display:flex;flex-direction:column;line-height:1.1;color:var(--ink)}
+.logo-txt b{font:700 1.15rem var(--head);letter-spacing:-.01em}
+.logo-txt small{font:600 9.5px var(--mono);letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-top:3px}
 nav{margin-left:auto}
 .nav-links{display:flex;gap:1.6rem}
 .nav-links a{font:500 .92rem var(--body);color:var(--muted);position:relative;padding:4px 0;transition:.25s}
@@ -231,15 +235,6 @@ html.js .bar-fill.animated{width:var(--w,100%)}
 .p-card:hover .p-arrow{opacity:1;transform:none}
 
 /* ============ EDUCATION ============ */
-.edu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:1.3rem}
-.edu{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.7rem;transition:.3s;min-width:0}
-.edu:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.edu-ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(109,40,217,.12),rgba(14,165,233,.12));color:var(--accent);margin-bottom:1rem}
-.edu-ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.edu h3{font:600 1.05rem var(--head)}
-.edu .school{color:var(--accent);font-weight:600;font-size:.92rem}
-.edu .meta{display:flex;flex-wrap:wrap;gap:.3rem 1rem;margin:.7rem 0 .5rem;font:500 11px var(--mono);color:var(--muted)}
-.edu p{font-size:.9rem;color:var(--muted)}
 
 /* ============ CONTACT ============ */
 .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:3.5rem;align-items:start;min-width:0}
@@ -257,30 +252,93 @@ html.js .bar-fill.animated{width:var(--w,100%)}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .f-group{margin-bottom:1rem}
 .f-group label{display:block;font:600 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.45rem}
-input,textarea{width:100%;max-width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;font:400 .95rem var(--body);color:var(--ink);outline:none;transition:.25s}
-input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(109,40,217,.12);background:#fff}
+input,textarea,select{width:100%;max-width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;font:400 .95rem var(--body);color:var(--ink);outline:none;transition:.25s}
+input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(109,40,217,.12);background:#fff}
 textarea{min-height:130px;resize:vertical}
+select{appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:2.4rem;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.f-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.f-status{display:none;margin-top:1rem;padding:.8rem 1rem;border-radius:12px;font-size:.9rem;line-height:1.5}
+.f-status.ok{display:block;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0}
+.f-status.err{display:block;background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+.btn[disabled]{opacity:.65;cursor:wait}
 .form-note{font:500 .78rem var(--mono);color:var(--muted);margin-top:1rem;text-align:center}
 
 /* ============ FOOTER ============ */
-footer{background:#141226;color:#a5a1c2}
-.foot-grid{display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;padding:60px 0 44px}
-.foot-brand{max-width:340px}
-.foot-brand .logo{color:#fff}
-.foot-brand p{max-width:32ch;font-size:.9rem;margin-top:.7rem}
-.foot-col h4{font:600 .78rem var(--mono);letter-spacing:.18em;color:#fff;margin-bottom:1rem;text-transform:uppercase}
-.foot-col a{display:block;padding:.3rem 0;font-size:.92rem;transition:.2s}
-.foot-col a:hover{color:#fff;transform:translateX(3px)}
-.foot-soc{display:flex;gap:.6rem}
-.foot-soc a{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);border-radius:12px;color:#c8c4e4;transition:.25s}
-.foot-soc a:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-3px)}
-.foot-soc svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;font:500 12px var(--mono);color:#8d89a8}
 
 /* ============ TO TOP ============ */
 #toTop{position:fixed;right:22px;bottom:22px;z-index:110;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#4f46e5);color:#fff;font-size:1.1rem;display:grid;place-items:center;box-shadow:0 12px 30px -10px rgba(109,40,217,.6);opacity:0;transform:translateY(70px);transition:.35s;pointer-events:none}
 #toTop.show{opacity:1;transform:none;pointer-events:auto}
 #toTop:hover{transform:translateY(-4px)}
+
+
+/* ============ EDUCATION (redesign) ============ */
+.ed-wrap{display:grid;grid-template-columns:1fr 360px;gap:2.4rem;align-items:start}
+.ed-list{position:relative;display:grid;gap:1.4rem;min-width:0}
+.ed-list::before{content:'';position:absolute;left:109px;top:26px;bottom:26px;width:2px;background:linear-gradient(180deg,var(--accent),var(--cyan));opacity:.28;border-radius:2px}
+.ed-item{display:grid;grid-template-columns:96px 28px 1fr;align-items:start;min-width:0}
+.ed-when{text-align:right;font:500 11px var(--mono);color:var(--muted);padding-top:1.35rem;line-height:1.5;padding-right:.2rem}
+.ed-when b{display:block;font:700 1.7rem var(--head);color:var(--ink);letter-spacing:-.02em;line-height:1.1}
+.ed-dot{display:flex;justify-content:center;padding-top:1.75rem;position:relative;z-index:1}
+.ed-dot i{width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 5px rgba(109,40,217,.12)}
+.ed-card{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:1.6rem;transition:.3s;min-width:0}
+.ed-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);background:#fff}
+.ed-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.ed-ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(109,40,217,.14),rgba(14,165,233,.14));color:var(--accent)}
+.ed-ic svg,.ed-side-ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ed-badge{font:700 11px var(--mono);letter-spacing:.16em;color:var(--accent);background:rgba(109,40,217,.1);padding:.35rem .8rem;border-radius:999px}
+.ed-card h3{font:600 1.15rem var(--head);line-height:1.3}
+.ed-school{color:var(--accent);font-weight:600;font-size:.95rem;margin-top:.15rem}
+.ed-loc{display:flex;align-items:center;gap:.35rem;font:500 11.5px var(--mono);color:var(--muted);margin:.55rem 0 .7rem}
+.ed-loc svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ed-card p:last-child{font-size:.92rem;color:var(--muted)}
+.ed-side{position:sticky;top:110px;border-radius:24px;padding:2rem;color:#fff;background:linear-gradient(150deg,#4c1d95 0%,#6d28d9 55%,#0ea5e9 130%);box-shadow:0 30px 60px -28px rgba(76,29,149,.6);overflow:hidden;min-width:0}
+.ed-side::after{content:'';position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 70%)}
+.ed-side-ic{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:rgba(255,255,255,.16);margin-bottom:1.2rem;position:relative;z-index:1}
+.ed-side small{display:block;font:600 11px var(--mono);letter-spacing:.24em;opacity:.8;position:relative;z-index:1}
+.ed-side h3{font:700 1.5rem var(--head);margin:.3rem 0 .6rem;position:relative;z-index:1}
+.ed-side p{font-size:.93rem;opacity:.9;position:relative;z-index:1}
+.ed-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 1.4rem;position:relative;z-index:1}
+.ed-chips span{font:500 .8rem var(--body);padding:.42rem .9rem;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22)}
+.ed-live{display:inline-flex;align-items:center;gap:.55rem;font:600 11.5px var(--mono);letter-spacing:.08em;position:relative;z-index:1}
+.ed-live i{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:edping 1.8s infinite}
+@keyframes edping{70%{box-shadow:0 0 0 9px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+
+/* ============ SERVICES (new) ============ */
+.section.dark{background:#141226;color:#fff;overflow:hidden}
+.section.dark::before{content:'';position:absolute;inset:0;background:radial-gradient(520px 340px at 90% 0%,rgba(139,92,246,.28),transparent 65%),radial-gradient(480px 320px at 0% 100%,rgba(14,165,233,.18),transparent 65%);pointer-events:none}
+.section.dark .container{position:relative}
+.section.dark .label{color:#a78bfa}
+.section.dark h2{color:#fff}
+.section.dark .sub{color:#a5a1c2}
+.grad-light{background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ============ FOOTER (redesign) ============ */
+footer{background:#0f0d1f;color:#a5a1c2;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;background:radial-gradient(520px 300px at 85% 0%,rgba(109,40,217,.25),transparent 65%),radial-gradient(420px 260px at 5% 100%,rgba(14,165,233,.12),transparent 65%);pointer-events:none}
+footer .container{position:relative}
+.foot-cta{margin-top:64px;display:flex;flex-wrap:wrap;gap:1.4rem 2rem;justify-content:space-between;align-items:center;padding:2.2rem 2.4rem;border-radius:26px;background:linear-gradient(120deg,rgba(109,40,217,.45),rgba(14,165,233,.28));border:1px solid rgba(255,255,255,.14)}
+.foot-cta h3{font:700 clamp(1.3rem,2.6vw,1.8rem) var(--head);color:#fff;letter-spacing:-.01em}
+.foot-cta p{color:#d6d2f0;margin-top:.25rem}
+.foot-cta-btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.foot-cta .btn{background:#fff;color:#141226;box-shadow:none}
+.foot-cta .btn.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+.foot-cta .btn.btn-outline:hover{background:rgba(255,255,255,.12)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1.1fr 1.4fr;gap:2.6rem;padding:60px 0 44px}
+.foot-brand{max-width:340px}
+.foot-brand .logo .logo-txt{color:#fff}
+.foot-brand .logo-txt small{color:#a78bfa}
+.foot-brand p{font-size:.92rem;margin:1.1rem 0 1.3rem;max-width:34ch}
+.foot-col h4{font:600 .78rem var(--mono);letter-spacing:.18em;color:#fff;margin-bottom:1.1rem;text-transform:uppercase}
+.foot-col a{display:block;padding:.3rem 0;font-size:.92rem;transition:.2s}
+.foot-col a:hover{color:#fff;transform:translateX(3px)}
+.foot-loc{display:block;padding:.3rem 0;font-size:.92rem;line-height:1.6}
+.foot-soc{display:flex;gap:.6rem}
+.foot-soc a{width:42px;height:42px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);border-radius:12px;color:#c8c4e4;transition:.25s}
+.foot-soc a:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-3px)}
+.foot-soc svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;align-items:center;font:500 12px var(--mono);color:#8d89a8}
+.foot-top{color:#c8c4e4;transition:.2s}
+.foot-top:hover{color:#fff}
 
 /* ================================================================
    RESPONSIVE — 6 breakpoints
@@ -354,7 +412,7 @@ footer{background:#141226;color:#a5a1c2}
   .form-card{padding:1.3rem;border-radius:18px}
   .f-row{grid-template-columns:1fr}
   /* prevent iOS zoom-on-focus (inputs must be ≥16px) */
-  input,textarea{font-size:16px;padding:.8rem .9rem}
+  input,textarea,select{font-size:16px;padding:.8rem .9rem}
   .c-item{padding:.8rem .9rem;gap:.75rem}
   .copy-btn{padding:6px 10px}
   .chips{gap:.45rem}
@@ -395,12 +453,101 @@ footer{background:#141226;color:#a5a1c2}
   html.js .reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+
+/* ===== new sections responsive ===== */
+@media (max-width:1180px){
+  .foot-grid{grid-template-columns:1fr 1fr;padding:48px 0 36px}
+  .foot-brand{max-width:100%}
+  .ed-wrap{grid-template-columns:1fr 320px;gap:1.8rem}
+}
+@media (max-width:900px){
+  .ed-wrap{grid-template-columns:1fr}
+  .ed-side{position:relative;top:auto}
+}
+@media (max-width:640px){
+  .foot-cta{margin-top:44px;padding:1.6rem 1.4rem;border-radius:20px}
+  .foot-cta-btns{width:100%}
+  .foot-cta-btns .btn{flex:1;justify-content:center}
+  .foot-grid{grid-template-columns:1fr;gap:1.8rem;padding:40px 0 30px}
+  .foot-bottom{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .ed-list::before{left:11px}
+  .ed-item{grid-template-columns:24px 1fr}
+  .ed-dot{grid-column:1;grid-row:1/3;padding-top:.15rem}
+  .ed-when{grid-column:2;grid-row:1;text-align:left;padding:0 0 .55rem .2rem}
+  .ed-when b{display:inline;font-size:1.15rem;margin-right:.6rem}
+  .ed-card{grid-column:2;grid-row:2;padding:1.3rem}
+  .ed-side{padding:1.6rem}
+  .logo-mark{width:36px;height:36px}
+  .logo-txt b{font-size:1.05rem}
+}
+@media (max-width:380px){.logo-txt small{display:none}}
+
+/* ---- services v2 ---- */
+.sv-layout{display:grid;grid-template-columns:380px 1fr;gap:2.2rem;align-items:start}
+.sv-side{position:sticky;top:110px;border-radius:26px;padding:1.8rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);min-width:0}
+.sv-me{display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem}
+.sv-avatar{position:relative;width:72px;height:72px;flex:none;border-radius:50%;padding:3px;background:linear-gradient(135deg,var(--accent2),var(--cyan));display:block}
+.sv-avatar b{position:absolute;inset:3px;border-radius:50%;background:#1d1a35;display:grid;place-items:center;font:700 1.2rem var(--head);color:#fff}
+.sv-avatar img{position:absolute;inset:3px;width:calc(100% - 6px);height:calc(100% - 6px);border-radius:50%;object-fit:cover;object-position:center 15%}
+.sv-me strong{display:block;font:700 1.1rem var(--head);color:#fff;line-height:1.2}
+.sv-me small{display:block;font-size:.8rem;color:#a5a1c2;margin:.15rem 0 .45rem}
+.sv-open{display:inline-flex;align-items:center;gap:.45rem;font:600 10.5px var(--mono);letter-spacing:.08em;color:#86efac;text-transform:uppercase}
+.sv-open i{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:edping 1.8s infinite}
+.sv-wall-label{display:block;font:600 11px var(--mono);letter-spacing:.2em;color:#a78bfa;text-transform:uppercase;margin-bottom:.9rem}
+.sv-wall{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem}
+.sv-tile{background:#fff;border-radius:16px;padding:.75rem .2rem .6rem;display:flex;flex-direction:column;align-items:center;gap:.4rem;transition:.3s;min-width:0}
+.sv-tile svg{width:26px;height:26px}
+.sv-tile em{font:600 8.5px var(--mono);font-style:normal;color:#3b3857;letter-spacing:.02em;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sv-tile:hover{transform:translateY(-5px);box-shadow:0 14px 26px -10px rgba(139,92,246,.7)}
+.sv-cta{margin-top:1.5rem}
+.sv-list{display:grid;gap:.9rem;min-width:0}
+.sv-row{position:relative;display:grid;grid-template-columns:auto auto 1fr auto;gap:1.2rem;align-items:center;padding:1.3rem 1.5rem 1.3rem 1.3rem;border-radius:22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);overflow:hidden;transition:.35s;min-width:0}
+.sv-row::before{content:'';position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:3px;background:linear-gradient(180deg,#a78bfa,#38bdf8);transform:scaleY(0);transition:.35s}
+.sv-row:hover{transform:translateX(6px);background:rgba(255,255,255,.075);border-color:rgba(167,139,250,.5);box-shadow:0 24px 50px -28px rgba(109,40,217,.9)}
+.sv-row:hover::before{transform:scaleY(1)}
+.sv-num{font:700 1.5rem var(--head);color:rgba(255,255,255,.18);min-width:2ch}
+.sv-ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--cyan));box-shadow:0 12px 24px -10px rgba(109,40,217,.8)}
+.sv-ic svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sv-body{min-width:0;display:block}
+.sv-body h3{font:600 1.15rem var(--head);color:#fff;margin-bottom:.3rem}
+.sv-body p{font-size:.9rem;color:#a5a1c2;margin:0}
+.sv-logos{display:flex;gap:.4rem;margin-top:.8rem}
+.sv-logos span{width:30px;height:30px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.sv-logos svg{width:16px;height:16px}
+.sv-go{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;color:#c4b5fd;transition:.3s}
+.sv-go svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sv-row:hover .sv-go{background:linear-gradient(135deg,var(--accent),var(--cyan));border-color:transparent;color:#fff;transform:rotate(-35deg)}
+.sv-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 2.2rem;margin-top:2.6rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#c8c4e4}
+.sv-strip span{display:inline-flex;align-items:center;gap:.55rem}
+.sv-strip i{width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#a78bfa,#38bdf8)}
+@media (max-width:1000px){
+  .sv-layout{grid-template-columns:1fr}
+  .sv-side{position:relative;top:auto}
+  .sv-wall{grid-template-columns:repeat(6,1fr)}
+}
+@media (max-width:640px){
+  .sv-wall{grid-template-columns:repeat(4,1fr)}
+  .sv-side{padding:1.4rem}
+  .sv-row{grid-template-columns:auto 1fr;gap:1rem;padding:1.2rem 1.1rem;align-items:start}
+  .sv-row:hover{transform:none}
+  .sv-num,.sv-go{display:none}
+  .sv-ic{width:46px;height:46px;border-radius:14px}
+  .sv-strip{justify-content:flex-start;gap:.7rem 1.4rem}
+}
 </style>
 </head>
 <body>
+<!-- logo sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs><linearGradient id="lgGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d28d9"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+  <symbol id="lg-glyph" viewBox="0 0 48 48"><path d="M17 15 9 24l8 9" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M31 15l8 9-8 9" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+<path d="M20 17.5h8M24 17.5v13.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="lg-mark" viewBox="0 0 48 48"><rect width="48" height="48" rx="13" fill="url(#lgGrad)"/><use href="#lg-glyph" width="48" height="48"/></symbol>
+</svg>
 
 <!-- PRELOADER -->
-<div id="preloader"><div class="pl-box"><div class="pl-logo">MT</div><p>Initializing portfolio…</p></div></div>
+<div id="preloader"><div class="pl-box"><div class="pl-logo"><svg width="40" height="40" aria-hidden="true"><use href="#lg-glyph"/></svg></div><p>Initializing portfolio…</p></div></div>
 
 <div id="c-dot"></div><div id="c-ring"></div>
 <div id="progress"></div>
@@ -409,13 +556,14 @@ footer{background:#141226;color:#a5a1c2}
 <!-- NAVBAR -->
 <header id="navbar">
   <div class="container nav-inner">
-    <a href="#home" class="logo">taha<span>.</span></a>
+    <a href="#home" class="logo" aria-label="Taha Ansari — Home"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#lg-mark"/></svg><span class="logo-txt"><b>Taha Ansari</b><small>Developer</small></span></a>
     <nav>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="menu-only"><a href="Muhammad-Taha-Resume.pdf" download>⬇ Resume (PDF)</a></li>
       </ul>
@@ -458,8 +606,8 @@ footer{background:#141226;color:#a5a1c2}
     <div class="hero-visual reveal" style="--d:180ms">
       <div class="photo-card">
         <div class="avatar-fallback">MT</div>
-        <!-- Put your photo here as "taha.jpg" in the same folder -->
-        <img class="taha-photo" src="taha.jpg" alt="Muhammad Taha — WordPress Developer">
+        <!-- Photo path: images/taha.jpg -->
+        <img class="taha-photo" src="images/taha.jpg" alt="Muhammad Taha — WordPress Developer">
         <span class="float-chip open"><i></i> Open to work</span>
         <span class="float-chip loc">📍 Karachi, PK</span>
       </div>
@@ -494,7 +642,7 @@ footer{background:#141226;color:#a5a1c2}
     <div class="about-photo reveal">
       <div class="photo-card">
         <div class="avatar-fallback">MT</div>
-        <img class="taha-photo" src="taha.jpg" alt="Muhammad Taha" loading="lazy">
+        <img class="taha-photo" src="images/taha.jpg" alt="Muhammad Taha" loading="lazy">
         <span class="float-chip open"><i></i> Open to work</span>
       </div>
     </div>
@@ -717,29 +865,105 @@ footer{background:#141226;color:#a5a1c2}
     <div class="sec-head">
       <span class="label reveal">06 — Education</span>
       <h2 class="reveal" style="--d:60ms">Foundations, plus a habit of <span class="grad">always learning.</span></h2>
+      <p class="sub reveal" style="--d:120ms">Formal education gave me the base. Hands-on client projects and daily practice did the rest.</p>
     </div>
-    <div class="edu-grid">
-      <div class="edu reveal">
-        <div class="edu-ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></div>
-        <h3>HSC — Higher Secondary Certificate</h3>
-        <p class="school">Govt City College, Karachi</p>
-        <div class="meta"><span>03/2020 — 05/2022</span><span>Karachi</span></div>
-        <p>Completed intermediate education while beginning hands-on web development practice.</p>
+    <div class="ed-wrap">
+      <div class="ed-list">
+        <div class="ed-item reveal">
+          <div class="ed-when"><b>2022</b>03/2020 — 05/2022</div>
+          <div class="ed-dot"><i></i></div>
+          <div class="ed-card">
+            <div class="ed-top"><span class="ed-ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span><span class="ed-badge">HSC</span></div>
+            <h3>Higher Secondary Certificate</h3>
+            <p class="ed-school">Govt City College</p>
+            <div class="ed-loc"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Karachi, Pakistan</div>
+            <p>Completed intermediate education while beginning hands-on web development practice.</p>
+          </div>
+        </div>
+        <div class="ed-item reveal" style="--d:100ms">
+          <div class="ed-when"><b>2020</b>03/2018 — 09/2020</div>
+          <div class="ed-dot"><i></i></div>
+          <div class="ed-card">
+            <div class="ed-top"><span class="ed-ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span><span class="ed-badge">SSC</span></div>
+            <h3>Secondary School Certificate</h3>
+            <p class="ed-school">Zealashia English Secondary School</p>
+            <div class="ed-loc"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Karachi, Pakistan</div>
+            <p>Built the discipline and problem-solving base that still shows up in my work today.</p>
+          </div>
+        </div>
       </div>
-      <div class="edu reveal" style="--d:80ms">
-        <div class="edu-ic"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></div>
-        <h3>SSC — Secondary School Certificate</h3>
-        <p class="school">Zealashia English Secondary School, Karachi</p>
-        <div class="meta"><span>03/2018 — 09/2020</span><span>Karachi</span></div>
-        <p>Built the discipline and problem-solving base that still shows up in my work today.</p>
+      <aside class="ed-side reveal" style="--d:140ms">
+        <span class="ed-side-ic"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8-.8-.7-2.2-.7-3 .8z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.8 12.8 0 0 1 22 2c0 2.7-.9 7.5-6 11a22 22 0 0 1-4 2z"/><path d="M9 12H4s.5-3 2-4c1.6-1 5 0 5 0"/><path d="M12 15v5s3-.5 4-2c1-1.6 0-5 0-5"/></svg></span>
+        <small>CURRENTLY</small>
+        <h3>Always leveling up</h3>
+        <p>Self-driven and shipping. I keep sharpening the skills clients actually need.</p>
+        <div class="ed-chips"><span>Modern JavaScript</span><span>Gutenberg Blocks</span><span>Core Web Vitals</span></div>
+        <div class="ed-live"><i></i> Learning · Ongoing</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section id="services" class="section dark">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="b-wp" viewBox="0 0 24 24"><path d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.11m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C4.911 3.15 8.235 1.215 12 1.215c2.809 0 5.365 1.072 7.286 2.833-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12 22.784c-1.059 0-2.081-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149-1.12.393-2.325.609-3.582.609M1.211 12c0-1.564.336-3.05.935-4.39L7.29 21.709C3.694 19.96 1.212 16.271 1.211 12M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0"/></symbol><symbol id="b-woo" viewBox="0 0 24 24"><path d="M.754 9.58a.754.754 0 00-.754.758v2.525c0 .42.339.758.758.758h3.135l1.431.799-.326-.799h2.373a.757.757 0 00.758-.758v-2.525a.757.757 0 00-.758-.758H.754zm2.709.445h.03c.065.001.124.023.179.067a.26.26 0 01.103.19.29.29 0 01-.033.16c-.13.239-.236.64-.322 1.199-.083.541-.114.965-.094 1.267a.392.392 0 01-.039.219.213.213 0 01-.176.12c-.086.006-.177-.034-.263-.124-.31-.316-.555-.788-.735-1.416-.216.425-.375.744-.478.957-.196.376-.363.568-.502.578-.09.007-.166-.069-.233-.228-.17-.436-.352-1.277-.548-2.524a.297.297 0 01.054-.222c.047-.064.116-.095.21-.102.169-.013.265.065.288.238.103.695.217 1.284.336 1.766l.727-1.387c.066-.126.15-.192.25-.199.146-.01.237.083.273.28.083.441.188.817.315 1.136.086-.844.233-1.453.44-1.828a.255.255 0 01.218-.147zm1.293.36c.056 0 .116.006.18.02.232.05.411.177.53.386.107.18.161.395.161.654 0 .343-.087.654-.26.94-.2.332-.459.5-.781.5a.88.88 0 01-.18-.022.763.763 0 01-.531-.384 1.287 1.287 0 01-.158-.659c0-.342.085-.655.258-.937.202-.333.462-.498.78-.498zm2.084 0c.056 0 .116.006.18.02.236.05.411.177.53.386.107.18.16.395.16.654 0 .343-.086.654-.259.94-.2.332-.459.5-.781.5a.88.88 0 01-.18-.022.763.763 0 01-.531-.384 1.287 1.287 0 01-.16-.659c0-.342.087-.655.26-.937.202-.333.462-.498.78-.498zm4.437.047c-.305 0-.546.102-.718.304-.173.203-.256.49-.256.856 0 .395.086.697.256.906.17.21.418.316.744.316.315 0 .559-.107.728-.316.17-.21.256-.504.256-.883s-.087-.673-.26-.879c-.176-.202-.424-.304-.75-.304zm-1.466.002a1.13 1.13 0 00-.84.326c-.223.22-.332.499-.332.838 0 .362.108.658.328.88.22.223.505.336.861.336.103 0 .22-.016.346-.052v-.54c-.117.034-.216.051-.303.051a.545.545 0 01-.422-.177c-.106-.12-.16-.278-.16-.48 0-.19.053-.348.156-.468a.498.498 0 01.397-.181c.103 0 .212.015.332.049v-.537a1.394 1.394 0 00-.363-.045zm12.414 0a1.135 1.135 0 00-.84.326c-.223.22-.332.499-.332.838 0 .362.108.658.328.88.22.223.506.336.861.336.103 0 .22-.016.346-.052v-.54c-.116.034-.216.051-.303.051a.545.545 0 01-.422-.177c-.106-.12-.16-.278-.16-.48 0-.19.053-.348.156-.468a.498.498 0 01.397-.181c.103 0 .212.015.332.049v-.537a1.394 1.394 0 00-.363-.045zm-9.598.06l-.29 2.264h.579l.156-1.559.395 1.559h.412l.379-1.555.164 1.555h.603l-.304-2.264h-.791l-.12.508c-.03.13-.06.264-.087.4l-.067.352a29.97 29.97 0 00-.258-1.26h-.771zm2.768 0l-.29 2.264h.579l.156-1.559.396 1.559h.412l.375-1.555.165 1.555h.603l-.305-2.264h-.789l-.119.508c-.03.13-.06.264-.086.4l-.066.352c-.063-.352-.15-.771-.26-1.26h-.771zm3.988 0v2.264h.611v-1.031h.012l.494 1.03h.645l-.489-1.019a.61.61 0 00.37-.552.598.598 0 00-.25-.506c-.167-.123-.394-.186-.68-.186h-.713zm3.377 0v2.264H24v-.483h-.63v-.414h.54v-.468h-.54v-.416h.626v-.483H22.76zm-4.793.004v2.264h1.24v-.483h-.627v-.416h.541v-.468h-.54v-.415h.622v-.482h-1.236zm2.025.432c.146.003.25.025.313.072.063.046.091.12.091.227 0 .156-.135.236-.404.24v-.54zm-15.22.011c-.104 0-.205.069-.301.211a1.078 1.078 0 00-.2.639c0 .096.02.2.06.303.049.13.117.198.196.215.083.016.173-.02.27-.106.123-.11.205-.273.252-.492.016-.077.023-.16.023-.246 0-.097-.02-.2-.06-.303-.05-.13-.116-.198-.196-.215a.246.246 0 00-.045-.006zm2.083 0c-.103 0-.204.069-.3.211a1.078 1.078 0 00-.2.639c0 .096.02.2.06.303.049.13.117.198.196.215.083.016.173-.02.27-.106.123-.11.205-.273.252-.492.013-.077.023-.16.023-.246 0-.097-.02-.2-.06-.303-.05-.13-.116-.198-.196-.215a.246.246 0 00-.045-.006zm4.428.006c.233 0 .354.218.354.66-.004.273-.038.46-.098.553a.293.293 0 01-.262.139.266.266 0 01-.242-.139c-.056-.093-.084-.28-.084-.562 0-.436.11-.65.332-.65Z"/></symbol><symbol id="b-el" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12c0 6.626 5.372 12 12 12s12-5.372 12-12c0-6.626-5.372-12-12-12ZM9 17H7V7H9Zm8 0H11V15h6Zm0-4H11V11h6Zm0-4H11V7h6Z"/></symbol><symbol id="b-html" viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></symbol><symbol id="b-css" viewBox="0 0 24 24"><path d="M0 0v20.16A3.84 3.84 0 0 0 3.84 24h16.32A3.84 3.84 0 0 0 24 20.16V3.84A3.84 3.84 0 0 0 20.16 0Zm14.256 13.08c1.56 0 2.28 1.08 2.304 2.64h-1.608c.024-.288-.048-.6-.144-.84-.096-.192-.288-.264-.552-.264-.456 0-.696.264-.696.84-.024.576.288.888.768 1.08.72.288 1.608.744 1.92 1.296q.432.648.432 1.656c0 1.608-.912 2.592-2.496 2.592-1.656 0-2.4-1.032-2.424-2.688h1.68c0 .792.264 1.176.792 1.176.264 0 .456-.072.552-.24.192-.312.24-1.176-.048-1.512-.312-.408-.912-.6-1.32-.816q-.828-.396-1.224-.936c-.24-.36-.36-.888-.36-1.536 0-1.44.936-2.472 2.424-2.448m5.4 0c1.584 0 2.304 1.08 2.328 2.64h-1.608c0-.288-.048-.6-.168-.84-.096-.192-.264-.264-.528-.264-.48 0-.72.264-.72.84s.288.888.792 1.08c.696.288 1.608.744 1.92 1.296.264.432.408.984.408 1.656.024 1.608-.888 2.592-2.472 2.592-1.68 0-2.424-1.056-2.448-2.688h1.68c0 .744.264 1.176.792 1.176.264 0 .456-.072.552-.24.216-.312.264-1.176-.048-1.512-.288-.408-.888-.6-1.32-.816-.552-.264-.96-.576-1.2-.936s-.36-.888-.36-1.536c-.024-1.44.912-2.472 2.4-2.448m-11.031.018c.711-.006 1.419.198 1.839.63.432.432.672 1.128.648 1.992H9.336c.024-.456-.096-.792-.432-.96-.312-.144-.768-.048-.888.24-.12.264-.192.576-.168.864v3.504c0 .744.264 1.128.768 1.128a.65.65 0 0 0 .552-.264c.168-.24.192-.552.168-.84h1.776c.096 1.632-.984 2.712-2.568 2.688-1.536 0-2.496-.864-2.472-2.472v-4.032c0-.816.24-1.44.696-1.848.432-.408 1.146-.624 1.857-.63"/></symbol><symbol id="b-js" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></symbol><symbol id="b-jq" viewBox="0 0 24 24"><path d="M1.525 5.87c-2.126 3.054-1.862 7.026-.237 10.269.037.079.078.154.118.229.023.052.049.1.077.15.013.027.031.056.047.082.026.052.054.102.081.152l.157.266c.03.049.057.097.09.146.056.094.12.187.178.281.026.04.05.078.079.117a6.368 6.368 0 00.31.445c.078.107.156.211.24.315.027.038.058.076.086.115l.22.269c.028.03.055.067.084.099.098.118.202.233.306.35l.005.006a3.134 3.134 0 00.425.44c.08.083.16.165.245.245l.101.097c.111.105.223.209.34.309.002 0 .003.002.005.003l.057.05c.102.089.205.178.31.26l.125.105c.085.068.174.133.26.2l.137.105c.093.07.192.139.287.207.035.025.07.05.106.073l.03.023.28.185.12.08c.148.094.294.184.44.272.041.02.084.044.123.068.108.062.22.125.329.183.06.034.122.063.184.094.075.042.153.083.234.125a.324.324 0 01.056.023c.033.015.064.031.096.047.12.06.245.118.375.175.024.01.05.02.076.034.144.063.289.123.438.182.034.01.07.027.105.04.135.051.274.103.411.152l.05.018c.154.052.305.102.46.15.036.01.073.023.111.033.16.048.314.105.474.137 10.273 1.872 13.258-6.177 13.258-6.177-2.508 3.266-6.958 4.127-11.174 3.169-.156-.036-.312-.086-.47-.132a13.539 13.539 0 01-.567-.182l-.062-.024c-.136-.046-.267-.097-.4-.148a1.615 1.615 0 00-.11-.04c-.148-.06-.29-.121-.433-.184-.031-.01-.057-.024-.088-.036a23.44 23.44 0 01-.362-.17 1.485 1.485 0 01-.106-.052c-.094-.044-.188-.095-.28-.143a3.947 3.947 0 01-.187-.096c-.114-.06-.227-.125-.34-.187-.034-.024-.073-.044-.112-.066a15.922 15.922 0 01-.439-.27 2.107 2.107 0 01-.118-.078 6.01 6.01 0 01-.312-.207c-.035-.023-.067-.048-.103-.073a9.553 9.553 0 01-.295-.212c-.042-.034-.087-.066-.132-.1-.088-.07-.177-.135-.265-.208l-.118-.095a10.593 10.593 0 01-.335-.28.258.258 0 00-.037-.031l-.347-.316-.1-.094c-.082-.084-.166-.164-.25-.246l-.098-.1a9.081 9.081 0 01-.309-.323l-.015-.016c-.106-.116-.21-.235-.313-.355-.027-.03-.053-.064-.08-.097l-.227-.277a21.275 21.275 0 01-.34-.449C2.152 11.79 1.306 7.384 3.177 3.771m4.943-.473c-1.54 2.211-1.454 5.169-.254 7.508a9.111 9.111 0 00.678 1.133c.23.33.484.721.793.988.107.122.223.24.344.36l.09.09c.114.11.232.217.35.325l.016.013a9.867 9.867 0 00.414.342c.034.023.063.05.096.073.14.108.282.212.428.316l.015.009c.062.045.128.086.198.13.028.018.06.042.09.06.106.068.21.132.318.197.017.007.032.016.048.023.09.055.188.108.282.157.033.02.065.035.1.054.066.033.132.068.197.102l.032.014c.135.067.273.129.408.19.034.014.063.025.092.039.111.048.224.094.336.137.05.017.097.037.144.052.102.038.21.073.31.108l.14.045c.147.045.295.104.449.13C22.164 17.206 24 11.098 24 11.098c-1.653 2.38-4.852 3.513-8.261 2.628a8.04 8.04 0 01-.449-.13c-.048-.014-.09-.029-.136-.043-.104-.036-.211-.07-.312-.109l-.144-.054c-.113-.045-.227-.087-.336-.135-.034-.015-.065-.025-.091-.04-.14-.063-.281-.125-.418-.192l-.206-.107-.119-.06a5.673 5.673 0 01-.265-.15.62.62 0 01-.062-.035c-.106-.066-.217-.13-.318-.198-.034-.019-.065-.042-.097-.062l-.208-.136c-.144-.1-.285-.208-.428-.313-.032-.029-.063-.053-.094-.079-1.499-1.178-2.681-2.79-3.242-4.613-.59-1.897-.46-4.023.56-5.75m4.292-.147c-.909 1.334-.996 2.99-.37 4.46.665 1.563 2.024 2.79 3.608 3.37.065.025.128.046.196.07l.088.027c.092.03.185.063.28.084 4.381.845 5.567-2.25 5.886-2.704-1.043 1.498-2.792 1.857-4.938 1.335a4.85 4.85 0 01-.516-.16 6.352 6.352 0 01-.618-.254 6.53 6.53 0 01-1.082-.66c-1.922-1.457-3.113-4.236-1.859-6.5"/></symbol><symbol id="b-bs" viewBox="0 0 24 24"><path d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.957v3.348h2.231c1.459 0 2.232-.585 2.232-1.685s-.795-1.663-2.326-1.663zM24 11.39v1.218c-1.128.108-1.817.944-2.226 2.268-.407 1.319-.463 2.937-.42 4.186.045 1.3-.968 2.5-2.337 2.5H4.985c-1.37 0-2.383-1.2-2.337-2.5.043-1.249-.013-2.867-.42-4.186-.41-1.324-1.1-2.16-2.228-2.268V11.39c1.128-.108 1.819-.944 2.227-2.268.408-1.319.464-2.937.42-4.186-.045-1.3.968-2.5 2.338-2.5h14.032c1.37 0 2.382 1.2 2.337 2.5-.043 1.249.013 2.867.42 4.186.409 1.324 1.098 2.16 2.226 2.268zm-7.927 2.817c0-1.354-.953-2.333-2.368-2.488v-.057c1.04-.169 1.856-1.135 1.856-2.213 0-1.537-1.213-2.538-3.062-2.538h-4.16v10.172h4.181c2.218 0 3.553-1.086 3.553-2.876z"/></symbol><symbol id="b-php" viewBox="0 0 24 24"><path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174H11.46l-.704 3.625H9.388l1.23-6.327h1.367l-.327 1.682h1.218c.767 0 1.295.134 1.586.401s.378.7.263 1.299l-.572 2.944h-1.389zm7.597-2.265a2.782 2.782 0 0 1-.305.847c-.143.255-.33.49-.561.703a2.44 2.44 0 0 1-.917.551c-.336.108-.765.164-1.286.164h-1.18l-.327 1.682h-1.378l1.23-6.326h2.649c.797 0 1.378.209 1.744.628.366.417.477 1.001.331 1.751zM17.766 10.207h-.943l-.516 2.648h.838c.557 0 .971-.105 1.242-.314.272-.21.455-.559.551-1.049.092-.47.049-.802-.125-.995s-.524-.29-1.047-.29z"/></symbol><symbol id="b-git" viewBox="0 0 24 24"><path d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/></symbol><symbol id="b-fig" viewBox="0 0 24 24"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></symbol><symbol id="b-wix" viewBox="0 0 24 24"><path d="m0 7.354 2.113 9.292h.801a1.54 1.54 0 0 0 1.506-1.218l1.351-6.34a.171.171 0 0 1 .167-.137c.08 0 .15.058.167.137l1.352 6.34a1.54 1.54 0 0 0 1.506 1.218h.805l2.113-9.292h-.565c-.62 0-1.159.43-1.296 1.035l-1.26 5.545-1.106-5.176a1.76 1.76 0 0 0-2.19-1.324c-.639.176-1.113.716-1.251 1.365l-1.094 5.127-1.26-5.537A1.33 1.33 0 0 0 .563 7.354H0zm13.992 0a.951.951 0 0 0-.951.95v8.342h.635a.952.952 0 0 0 .951-.95V7.353h-.635zm1.778 0 3.158 4.66-3.14 4.632h1.325c.368 0 .712-.181.918-.486l1.756-2.59a.12.12 0 0 1 .197 0l1.754 2.59c.206.305.55.486.918.486h1.326l-3.14-4.632L24 7.354h-1.326c-.368 0-.712.181-.918.486l-1.772 2.617a.12.12 0 0 1-.197 0L18.014 7.84a1.108 1.108 0 0 0-.918-.486H15.77z"/></symbol></svg>
+  <div class="container">
+    <div class="sec-head">
+      <span class="label reveal">07 — Services</span>
+      <h2 class="reveal" style="--d:60ms">What I can build <span class="grad-light">for you.</span></h2>
+      <p class="sub reveal" style="--d:120ms">From a simple landing page to a full online store. Pick a service and I will reply with a clear plan and estimate.</p>
+    </div>
+    <div class="sv-layout">
+      <aside class="sv-side reveal">
+        <div class="sv-me">
+          <span class="sv-avatar"><b>TA</b><img class="taha-photo" src="images/taha.jpg" alt="Taha Ansari" loading="lazy"></span>
+          <div><strong>Taha Ansari</strong><small>WordPress &amp; Front-End Developer</small><span class="sv-open"><i></i>Open to work</span></div>
+        </div>
+        <span class="sv-wall-label">Tools &amp; tech I work with</span>
+        <div class="sv-wall"><span class="sv-tile" title="WordPress"><svg viewBox="0 0 24 24" fill="#21759B" aria-hidden="true"><use href="#b-wp"/></svg><em>WordPress</em></span><span class="sv-tile" title="WooCommerce"><svg viewBox="0 0 24 24" fill="#96588A" aria-hidden="true"><use href="#b-woo"/></svg><em>WooCommerce</em></span><span class="sv-tile" title="Elementor"><svg viewBox="0 0 24 24" fill="#92003B" aria-hidden="true"><use href="#b-el"/></svg><em>Elementor</em></span><span class="sv-tile" title="HTML5"><svg viewBox="0 0 24 24" fill="#E34F26" aria-hidden="true"><use href="#b-html"/></svg><em>HTML5</em></span><span class="sv-tile" title="CSS"><svg viewBox="0 0 24 24" fill="#663399" aria-hidden="true"><use href="#b-css"/></svg><em>CSS</em></span><span class="sv-tile" title="JavaScript"><svg viewBox="0 0 24 24" fill="#E5C100" aria-hidden="true"><use href="#b-js"/></svg><em>JavaScript</em></span><span class="sv-tile" title="jQuery"><svg viewBox="0 0 24 24" fill="#0769AD" aria-hidden="true"><use href="#b-jq"/></svg><em>jQuery</em></span><span class="sv-tile" title="Bootstrap"><svg viewBox="0 0 24 24" fill="#7952B3" aria-hidden="true"><use href="#b-bs"/></svg><em>Bootstrap</em></span><span class="sv-tile" title="PHP"><svg viewBox="0 0 24 24" fill="#777BB4" aria-hidden="true"><use href="#b-php"/></svg><em>PHP</em></span><span class="sv-tile" title="Git"><svg viewBox="0 0 24 24" fill="#F03C2E" aria-hidden="true"><use href="#b-git"/></svg><em>Git</em></span><span class="sv-tile" title="Figma"><svg viewBox="0 0 24 24" fill="#F24E1E" aria-hidden="true"><use href="#b-fig"/></svg><em>Figma</em></span><span class="sv-tile" title="Wix"><svg viewBox="0 0 24 24" fill="#0C6EFC" aria-hidden="true"><use href="#b-wix"/></svg><em>Wix</em></span></div>
+        <a class="btn w-100 sv-cta" href="#contact">Start your project ➜</a>
+      </aside>
+      <div class="sv-list">
+        <a class="sv-row reveal" href="#contact" data-service="New WordPress website">
+          <span class="sv-num">01</span>
+          <span class="sv-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg></span>
+          <span class="sv-body"><h3>Custom WordPress Websites</h3><p>Business, portfolio and agency sites built on clean, lightweight themes you can manage easily.</p><span class="sv-logos"><span title="WordPress"><svg viewBox="0 0 24 24" fill="#21759B" aria-hidden="true"><use href="#b-wp"/></svg></span><span title="Elementor"><svg viewBox="0 0 24 24" fill="#92003B" aria-hidden="true"><use href="#b-el"/></svg></span><span title="CSS"><svg viewBox="0 0 24 24" fill="#663399" aria-hidden="true"><use href="#b-css"/></svg></span></span></span>
+          <span class="sv-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="sv-row reveal" style="--d:70ms" href="#contact" data-service="WooCommerce / online store">
+          <span class="sv-num">02</span>
+          <span class="sv-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 7H6"/></svg></span>
+          <span class="sv-body"><h3>WooCommerce Stores</h3><p>Online stores with smooth checkout, product setup, payments and a layout that sells.</p><span class="sv-logos"><span title="WooCommerce"><svg viewBox="0 0 24 24" fill="#96588A" aria-hidden="true"><use href="#b-woo"/></svg></span><span title="WordPress"><svg viewBox="0 0 24 24" fill="#21759B" aria-hidden="true"><use href="#b-wp"/></svg></span><span title="PHP"><svg viewBox="0 0 24 24" fill="#777BB4" aria-hidden="true"><use href="#b-php"/></svg></span></span></span>
+          <span class="sv-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="sv-row reveal" style="--d:140ms" href="#contact" data-service="Landing page">
+          <span class="sv-num">03</span>
+          <span class="sv-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 10h16M10 10v10"/></svg></span>
+          <span class="sv-body"><h3>Landing Pages</h3><p>Fast, focused pages designed to turn visitors into enquiries, sign-ups or sales.</p><span class="sv-logos"><span title="HTML5"><svg viewBox="0 0 24 24" fill="#E34F26" aria-hidden="true"><use href="#b-html"/></svg></span><span title="CSS"><svg viewBox="0 0 24 24" fill="#663399" aria-hidden="true"><use href="#b-css"/></svg></span><span title="JavaScript"><svg viewBox="0 0 24 24" fill="#E5C100" aria-hidden="true"><use href="#b-js"/></svg></span></span></span>
+          <span class="sv-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="sv-row reveal" style="--d:210ms" href="#contact" data-service="HTML / PSD / Figma to WordPress">
+          <span class="sv-num">04</span>
+          <span class="sv-ic"><svg viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+          <span class="sv-body"><h3>Design to WordPress</h3><p>HTML, PSD or Figma designs converted into pixel-perfect, responsive WordPress sites.</p><span class="sv-logos"><span title="Figma"><svg viewBox="0 0 24 24" fill="#F24E1E" aria-hidden="true"><use href="#b-fig"/></svg></span><span title="HTML5"><svg viewBox="0 0 24 24" fill="#E34F26" aria-hidden="true"><use href="#b-html"/></svg></span><span title="WordPress"><svg viewBox="0 0 24 24" fill="#21759B" aria-hidden="true"><use href="#b-wp"/></svg></span></span></span>
+          <span class="sv-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="sv-row reveal" style="--d:280ms" href="#contact" data-service="Speed optimization">
+          <span class="sv-num">05</span>
+          <span class="sv-ic"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+          <span class="sv-body"><h3>Speed Optimization</h3><p>Better Core Web Vitals, smaller pages and faster loading for users and for search.</p><span class="sv-logos"><span title="WordPress"><svg viewBox="0 0 24 24" fill="#21759B" aria-hidden="true"><use href="#b-wp"/></svg></span><span title="JavaScript"><svg viewBox="0 0 24 24" fill="#E5C100" aria-hidden="true"><use href="#b-js"/></svg></span><span title="CSS"><svg viewBox="0 0 24 24" fill="#663399" aria-hidden="true"><use href="#b-css"/></svg></span></span></span>
+          <span class="sv-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="sv-row reveal" style="--d:350ms" href="#contact" data-service="Bug fixes / maintenance">
+          <span class="sv-num">06</span>
+          <span class="sv-ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6z"/></svg></span>
+          <span class="sv-body"><h3>Maintenance &amp; Fixes</h3><p>Bug fixes, updates, security checks and small improvements after your site is live.</p><span class="sv-logos"><span title="WordPress"><svg viewBox="0 0 24 24" fill="#21759B" aria-hidden="true"><use href="#b-wp"/></svg></span><span title="PHP"><svg viewBox="0 0 24 24" fill="#777BB4" aria-hidden="true"><use href="#b-php"/></svg></span><span title="Git"><svg viewBox="0 0 24 24" fill="#F03C2E" aria-hidden="true"><use href="#b-git"/></svg></span></span></span>
+          <span class="sv-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
       </div>
-      <div class="edu reveal" style="--d:160ms">
-        <div class="edu-ic"><svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8-.8-.7-2.2-.7-3 .8z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.9A12.8 12.8 0 0 1 22 2c0 2.7-.9 7.5-6 11a22 22 0 0 1-4 2z"/><path d="M9 12H4s.5-3 2-4c1.6-1 5 0 5 0"/><path d="M12 15v5s3-.5 4-2c1-1.6 0-5 0-5"/></svg></div>
-        <h3>Always Leveling Up</h3>
-        <p class="school">Self-driven &amp; shipping</p>
-        <div class="meta"><span>Ongoing</span></div>
-        <p>Currently sharpening modern JavaScript, Gutenberg block development and Core Web Vitals optimization.</p>
-      </div>
+    </div>
+    <div class="sv-strip reveal">
+      <span><i></i>Fast delivery</span><span><i></i>Mobile responsive</span><span><i></i>SEO-ready</span><span><i></i>Post-launch support</span>
     </div>
   </div>
 </section>
@@ -748,7 +972,7 @@ footer{background:#141226;color:#a5a1c2}
 <section id="contact" class="section">
   <div class="container contact-grid">
     <div>
-      <span class="label reveal">07 — Contact</span>
+      <span class="label reveal">08 — Contact</span>
       <h2 class="reveal" style="--d:60ms">Got a project in mind? Let's build something <span class="grad">fast.</span></h2>
       <p class="sub reveal" style="--d:120ms">A landing page, a WooCommerce store, an HTML-to-WordPress conversion, or a site that needs a speed boost — tell me about it and I'll reply with a clear plan and estimate.</p>
       <div class="c-list reveal" style="--d:180ms">
@@ -773,14 +997,73 @@ footer{background:#141226;color:#a5a1c2}
         </div>
       </div>
     </div>
-    <form class="form-card reveal" style="--d:120ms" id="contactForm">
+    <form class="form-card reveal" style="--d:120ms" id="contactForm" action="https://formsubmit.co/tahaansarikhi2004@gmail.com" method="POST">
+      <!-- FormSubmit settings -->
+      <input type="hidden" name="_subject" value="New Project Enquiry — Portfolio Website">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="f-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
       <div class="f-row">
-        <div class="f-group"><label for="cf-name">Your name</label><input id="cf-name" type="text" placeholder="John Doe" required></div>
-        <div class="f-group"><label for="cf-email">Your email</label><input id="cf-email" type="email" placeholder="john@company.com" required></div>
+        <div class="f-group"><label for="cf-name">Your name *</label><input id="cf-name" name="Name" type="text" placeholder="John Doe" required></div>
+        <div class="f-group"><label for="cf-email">Your email *</label><input id="cf-email" name="email" type="email" placeholder="john@company.com" required></div>
       </div>
-      <div class="f-group"><label for="cf-msg">Project details</label><textarea id="cf-msg" placeholder="What are you building? Share goals, pages, deadlines — or a link to a design you like." required></textarea></div>
-      <button type="submit" class="btn w-100">Send enquiry ➜</button>
-      <p class="form-note">Opens your email app — usually replied to within 24 hours.</p>
+      <div class="f-row">
+        <div class="f-group"><label for="cf-phone">Phone / WhatsApp</label><input id="cf-phone" name="Phone / WhatsApp" type="tel" placeholder="+92 300 1234567"></div>
+        <div class="f-group"><label for="cf-company">Company / Brand</label><input id="cf-company" name="Company" type="text" placeholder="Your company (optional)"></div>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label for="cf-service">Service needed *</label>
+          <select id="cf-service" name="Service Needed" required>
+            <option value="" selected disabled>Select a service</option>
+            <option>New WordPress website</option>
+            <option>WooCommerce / online store</option>
+            <option>Landing page</option>
+            <option>HTML / PSD / Figma to WordPress</option>
+            <option>Redesign existing website</option>
+            <option>Speed optimization</option>
+            <option>Bug fixes / maintenance</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="f-group"><label for="cf-budget">Budget *</label>
+          <select id="cf-budget" name="Budget" required>
+            <option value="" selected disabled>Select budget range</option>
+            <option>Under $100</option>
+            <option>$100 – $300</option>
+            <option>$300 – $700</option>
+            <option>$700 – $1,500</option>
+            <option>$1,500+</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+      <div class="f-row">
+        <div class="f-group"><label for="cf-timeline">Timeline *</label>
+          <select id="cf-timeline" name="Timeline" required>
+            <option value="" selected disabled>When do you need it?</option>
+            <option>ASAP (under 1 week)</option>
+            <option>1 – 2 weeks</option>
+            <option>2 – 4 weeks</option>
+            <option>1 month+</option>
+            <option>Flexible</option>
+          </select>
+        </div>
+        <div class="f-group"><label for="cf-site">Existing website</label><input id="cf-site" name="Existing Website" type="url" placeholder="https://yoursite.com (if any)"></div>
+      </div>
+      <div class="f-group"><label for="cf-ref">Reference links</label><input id="cf-ref" name="Reference Links" type="text" placeholder="Sites or designs you like (Figma, Drive, etc.)"></div>
+      <div class="f-group"><label for="cf-contact">Preferred contact method</label>
+        <select id="cf-contact" name="Preferred Contact">
+          <option>Email</option>
+          <option>WhatsApp</option>
+          <option>Phone call</option>
+          <option>Google Meet / Zoom</option>
+        </select>
+      </div>
+      <div class="f-group"><label for="cf-msg">Project details *</label><textarea id="cf-msg" name="Project Details" placeholder="What are you building? Share goals, pages, features, deadlines." required></textarea></div>
+      <button type="submit" class="btn w-100" id="cfBtn">Send enquiry ➜</button>
+      <div class="f-status" id="cfStatus" role="status" aria-live="polite"></div>
+      <p class="form-note">Goes straight to my inbox — usually replied to within 24 hours.</p>
     </form>
   </div>
 </section>
@@ -789,27 +1072,46 @@ footer{background:#141226;color:#a5a1c2}
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
+    <div class="foot-cta">
+      <div>
+        <h3>Have a project in mind?</h3>
+        <p>Let's build something fast, clean and built to last.</p>
+      </div>
+      <div class="foot-cta-btns">
+        <a class="btn" href="#contact">Start a project ➜</a>
+        <a class="btn btn-outline" href="https://wa.me/923131224992" target="_blank" rel="noopener">WhatsApp me</a>
+      </div>
+    </div>
+
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#home" class="logo">taha<span>.</span></a>
-        <p>WordPress &amp; Front-End developer crafting fast, pixel-perfect websites that ship and scale.</p>
-      </div>
-      <div class="foot-col">
-        <h4>Quick links</h4>
-        <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#contact">Contact</a>
-      </div>
-      <div class="foot-col">
-        <h4>Connect</h4>
+        <a href="#home" class="logo" aria-label="Taha Ansari — Home"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#lg-mark"/></svg><span class="logo-txt"><b>Taha Ansari</b><small>Developer</small></span></a>
+        <p>WordPress and front-end developer crafting fast, pixel-perfect websites that ship and scale.</p>
         <div class="foot-soc">
           <a href="https://www.linkedin.com/in/taha-ansari-340b29285/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
           <a href="mailto:tahaansarikhi2004@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
           <a href="https://wa.me/923131224992" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-4-.9L3 21l1.9-5.5a8.38 8.38 0 0 1-.9-4A8.5 8.5 0 0 1 12.5 3a8.38 8.38 0 0 1 8.5 8.5z"/></svg></a>
         </div>
       </div>
+      <div class="foot-col">
+        <h4>Quick links</h4>
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#services">WordPress Websites</a><a href="#services">WooCommerce Stores</a><a href="#services">Landing Pages</a><a href="#services">Design to WordPress</a><a href="#services">Speed Optimization</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:tahaansarikhi2004@gmail.com" class="nowrap-overflow">tahaansarikhi2004@gmail.com</a>
+        <a href="tel:+923131224992">0313-1224992</a>
+        <span class="foot-loc">Karachi, Pakistan<br>Remote worldwide</span>
+      </div>
     </div>
+
     <div class="foot-bottom">
-      <span>© <span id="year">2025</span> Muhammad Taha — WordPress Developer &amp; Front-End Engineer</span>
-      <span>Built with WordPress-grade care · Karachi, PK</span>
+      <span>© <span id="year">2025</span> Taha Ansari. All rights reserved.</span>
+      <a href="#home" class="foot-top">Back to top ↑</a>
     </div>
   </div>
 </footer>
@@ -964,7 +1266,7 @@ safe('activenav',function(){
   var io=new IntersectionObserver(function(es){es.forEach(function(en){
     if(en.isIntersecting)links.forEach(function(a){if(a.getAttribute('href')&&a.getAttribute('href').charAt(0)==='#')a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id);});
   });},{rootMargin:'-40% 0px -55% 0px'});
-  ['home','about','experience','skills','work','contact'].forEach(function(id){var s=d.getElementById(id);if(s)io.observe(s);});
+  ['home','about','experience','skills','work','education','services','contact'].forEach(function(id){var s=d.getElementById(id);if(s)io.observe(s);});
 });
 
 /* ---- mobile menu + close on outside tap / resize ---- */
@@ -995,18 +1297,35 @@ safe('toast',function(){
   });});
 });
 
-/* ---- contact form (mailto) ---- */
+/* ---- contact form (FormSubmit -> email) ---- */
 safe('form',function(){
   var f=$('#contactForm');if(!f)return;
+  var btn=$('#cfBtn'),st=$('#cfStatus');
+  var say=function(t,c){st.className='f-status '+c;st.textContent=t;};
   f.addEventListener('submit',function(e){
     e.preventDefault();
-    var n=($('#cf-name')||{}).value||'',em=($('#cf-email')||{}).value||'',m=($('#cf-msg')||{}).value||'';
-    var body=encodeURIComponent(m)+'%0D%0A%0D%0A— '+encodeURIComponent(n)+' ('+encodeURIComponent(em)+')';
-    window.location.href='mailto:tahaansarikhi2004@gmail.com?subject='+encodeURIComponent('Project enquiry from '+n)+'&body='+body;
+    if(!f.checkValidity()){f.reportValidity();return;}
+    var label=btn.textContent;btn.disabled=true;btn.textContent='Sending…';st.className='f-status';
+    fetch('https://formsubmit.co/ajax/tahaansarikhi2004@gmail.com',{
+      method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d&&(d.success===true||d.success==='true')){
+        say('✓ Thank you! Your enquiry has been sent. I will reply within 24 hours.','ok');f.reset();
+      }else{throw new Error('fail');}
+    }).catch(function(){
+      say('Could not send right now. Please email me directly at tahaansarikhi2004@gmail.com or WhatsApp 0313-1224992.','err');
+    }).then(function(){btn.disabled=false;btn.textContent=label;});
   });
 });
 
-/* ---- photo fallback (graceful if taha.jpg missing) ---- */
+/* ---- services -> preselect form ---- */
+safe('services',function(){
+  $$('[data-service]').forEach(function(a){
+    a.addEventListener('click',function(){var sel=$('#cf-service');if(sel)sel.value=a.getAttribute('data-service');});
+  });
+});
+
+/* ---- photo fallback (graceful if images/taha.jpg missing) ---- */
 safe('photos',function(){
   $$('img.taha-photo').forEach(function(img){
     var kill=function(){if(img.parentNode)img.parentNode.removeChild(img);};
